@@ -1,0 +1,77 @@
+1) Install MySQL Database Connector :
+
+    sudo apt-get install libmysqlclient-dev
+
+2) Install the mysqlclient library :
+
+    pip install mysqlclient
+
+3) Install MySQL server, with the following command :
+
+    sudo apt-get install mysql-server
+
+4) Create the Database :
+
+    i) Verify that the MySQL service is running:
+
+        systemctl status mysql.service
+
+    ii) Log in with your MySQL credentials using the following command where -u is the flag for declaring your username and -p is the flag that tells MySQL that this user requires a password :  
+
+        mysql -u db_user -p
+
+
+    iii) CREATE DATABASE db_name;
+
+    iv) Exit MySQL server, press CTRL + D.
+
+5) Add the MySQL Database Connection to your Application:
+
+    i) Navigate to the settings.py file and replace the current DATABASES lines with the following:
+
+        # Database
+        # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'OPTIONS': {
+                    'read_default_file': '/etc/mysql/my.cnf',
+                },
+            }
+        }
+        ...
+
+    ii) Next, let’s edit the config file so that it has your MySQL credentials. Use vi as sudo to edit the file and add the following information:
+
+        sudo vi /etc/mysql/my.cnf
+
+        database = db_name
+        user = db_user
+        password = db_password
+        default-character-set = utf8
+
+6) Once the file has been edited, we need to restart MySQL for the changes to take effect :
+
+    systemctl daemon-reload
+
+    systemctl restart mysql
+
+7) Test MySQL Connection to Application:
+
+    python manage.py runserver your-server-ip:8000
+
+
+
+if success will generate theses tables:
+
+auth_group
+auth_group_permissions
+auth_permission
+auth_user
+auth_user_groups
+auth_user_user_permissions
+django_admin_log
+django_content_type
+django_migrations
+django_session
