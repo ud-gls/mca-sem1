@@ -22,6 +22,7 @@ This repository contains course programs.
 - [steps_to_setup_mysql.txt](material/Django/steps_to_setup_mysql.txt)
 - [Django Commands](material/Django/django_commands.md)
 - [Django Shell Commands](material/Django/django_shell_commands.md)
+- [Django Fields](material/Django/django_fields.md)
 
 ## Assignments
 
