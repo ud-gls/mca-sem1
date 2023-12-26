@@ -35,6 +35,7 @@ This repository contains course programs.
 
 ### Django Assignments
 
+- [Assignment](assignments/django_assignments.md)
 
 ## Examples
 
@@ -49,4 +50,6 @@ This repository contains course programs.
 - [MoviePalace Project](examples/django/moviepalace.zip)
 - [University Project](examples/django/university.zip)
   - [University DB Shell Commands](examples/django/university_db_sell_commands.md)
-- [Library](examples/django/library.zip)
+- [Library FBW](examples/django/library_fbw.zip) (In this project, views are created based on function.)
+- [Library CBW](examples/django/library_cbw.zip) (In this project, views are created based on geberic class base views.)
+- [Library DRF](examples/django/library_drf.zip) (In this project, I have created the api endpoint for the book model only. Also you have to install `djangorestframework` package in venv or in system to use it.)
